@@ -11,8 +11,8 @@ class EntryScreen extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            message: 'Welcome to top level component of this app.',
-            dispatchMessage: 'Dispatch an action to:',
+            message: 'Welcome  amory to top level component of this app.',
+            dispatchMessage: 'Dispatch Amr Man an action to:',
             passActionDispatchValue: 1,
             failActionDispatchValue: 0,
         };
