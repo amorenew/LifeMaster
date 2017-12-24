@@ -3,6 +3,7 @@ import {
     StyleSheet,
     View, Button,Text
 } from 'react-native';
+import { log } from 'util';
 
 class index extends React.Component {
     constructor(props, context) {
@@ -13,8 +14,8 @@ class index extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Button color="#841584"
-                    title="Learning" style={styles.button} ><Text>Learning2</Text></Button>
+                <Button color="#841584" onPress={()=>alert("sfd")}
+                    title="Learning" style = {{textColor:'red',color:'green'}} ><Text>Learning2</Text></Button>
             </View>
         );
     }
@@ -27,10 +28,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FFF',
-    },
-    button: {
-        textColor: "#F00",
-        backgroundColor: '#0FF',
     }
 })
 
