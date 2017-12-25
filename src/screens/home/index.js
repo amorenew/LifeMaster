@@ -1,21 +1,48 @@
 import React from 'react';
 import {
     StyleSheet,
-    View, Button,Text
+    View, Button, Text, TouchableOpacity
 } from 'react-native';
-import { log } from 'util';
+import ElevatedView from './../../components/ElevatedView'
 
 class index extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-    }
 
 
     render() {
         return (
             <View style={styles.container}>
-                <Button color="#841584" onPress={()=>alert("sfd")}
-                    title="Learning" style = {{textColor:'red',color:'green'}} ><Text>Learning2</Text></Button>
+
+                <ElevatedView
+                    elevation={8}
+                    style={styles.stayElevated}
+                />
+                <TouchableOpacity
+                    style={{ backgroundColor: 'red', paddingHorizontal: 10, paddingVertical: 5 }}
+                    onPress={() => alert("sfd")}>
+                    <Text style={{ color: 'green' }}>Learning</Text>
+                </TouchableOpacity>
+                <View
+                    style={{
+                        height: 100,
+                        width: 100,
+                        shadowOpacity: 0.75,
+                        shadowRadius: 5,
+                        shadowColor: 'blue',
+                        shadowOffset: { height: 0, width: 0 },
+                    }}
+                >
+                    <View
+                        style={{
+                            height: 100,
+                            width: 100,
+                            shadowOpacity: 0.75,
+                            shadowRadius: 5,
+                            shadowColor: 'green',
+                            backgroundColor:'linear-gradient(to right, red , yellow)',
+                            shadowOffset: { height: -5, width: -5 },
+                        }}
+                    />
+                </View>
             </View>
         );
     }
@@ -24,10 +51,17 @@ class index extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        height: "300px",
+        height: 300,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#FFF',
+    },
+
+    stayElevated: {
+        width: 100,
+        height: 100,
+        margin: 10,
+        backgroundColor: 'white'
     }
 })
 
