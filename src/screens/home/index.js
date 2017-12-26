@@ -16,69 +16,94 @@ class index extends React.Component {
 
     render() {
         return (
-                  <View style={styles.container}>
+            <View style={styles.container}>
 
-                    <ElevatedView elevation={8} style={styles.stayElevated}/>
+                <ElevatedView elevation={8} style={styles.stayElevated}/>
 
-                    <View
+                {/* <View
+                    style={{
+                    shadowOpacity: 0.75,
+                    shadowRadius: 5,
+                    shadowColor: 'blue',
+                    shadowOffset: {
+                        height: 0,
+                        width: 0
+                    }
+                }}> */}
+
+                    <TouchableOpacity
                         style={{
-                        shadowOpacity: 0.75,
-                        shadowRadius: 5,
-                        shadowColor: 'blue',
-                        shadowOffset: {
-                            height: 0,
-                            width: 0
-                        }
-                    }}>
-                        <TouchableOpacity
-                            style={{
-                                height: '100%',
-                        width: '100%',
-                            backgroundColor: 'white',
-                            paddingHorizontal: 10,
-                            paddingVertical: 5,
-                        }}
-                            onPress={() => alert("sfd")}>
-                            <Text
-                                style={{
-                                color: 'blue',
-                                fontSize:30
-                            }}>Learning</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity>
+                        width: 180,
+                        height: 130,
+                        padding: 10,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                        onPress={() => alert("sfd")}>
                         <LinearGradient
-                            colors={['#4c669f', '#3b5998', '#192f6a']}
-                            style={styles.linearGradient}>
-                            <Text style={styles.buttonText}>Sign in with Facebook</Text>
+                            colors={['#5E98D9', '#558ED2', '#487EC7']}
+                            style={{
+                            width: '100%',
+                            height: '100%',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            paddingLeft: 15,
+                            paddingRight: 15,
+                            borderRadius: 10
+                        }}>
+                            <ImageBackground
+                                source={Images.learning}
+                                resizeMode={Image.resizeMode.contain}
+                                style={{
+                                width: '100%',
+                                height: '100%',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Text
+                                    style={{
+                                    color: 'white',
+                                    zIndex: 0,
+                                    fontSize: 38
+                                }}>Learning</Text>
+                            </ImageBackground>
                         </LinearGradient>
                     </TouchableOpacity>
+                {/* </View> */}
+                <TouchableOpacity>
+                    <LinearGradient
+                        colors={['#4c669f', '#3b5998', '#192f6a']}
+                        style={styles.linearGradient}>
+                        <Text style={styles.buttonText}>Sign in with Facebook</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
+                <View
+                    style={{
+                    height: 100,
+                    width: 100,
+                    shadowOpacity: 0.75,
+                    shadowRadius: 5,
+                    shadowColor: 'blue',
+                    shadowOffset: {
+                        height: 0,
+                        width: 0
+                    }
+                }}>
                     <View
                         style={{
                         height: 100,
                         width: 100,
                         shadowOpacity: 0.75,
                         shadowRadius: 5,
-                        shadowColor: 'blue',
+                        shadowColor: 'green',
                         shadowOffset: {
-                            height: 0,
-                            width: 0
+                            height: -5,
+                            width: -5
                         }
-                    }}>
-                        <View
-                            style={{
-                            height: 100,
-                            width: 100,
-                            shadowOpacity: 0.75,
-                            shadowRadius: 5,
-                            shadowColor: 'green',
-                            shadowOffset: {
-                                height: -5,
-                                width: -5
-                            }
-                        }}/>
-                    </View>
-                </View>        );
+                    }}/>
+                </View>
+            </View>
+        );
     }
 }
 
