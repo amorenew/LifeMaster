@@ -1,4 +1,14 @@
 //from react-native-web-linear-gradient
+/*sample
+ <LinearGradient
+                colors={['#5683FF', '#568355', '#568300']}
+                style={[styles.linearGradient, styles.container]}>
+                linearGradient: {
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 10
+    }
+*/
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 
