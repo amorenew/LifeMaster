@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'col'
+        flexDirection: 'column'
 
     },
 
