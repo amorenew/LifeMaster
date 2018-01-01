@@ -9,12 +9,14 @@
     "build": "react-scripts build",
     "test:web": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "electron": "react-scripts start & electron ."
+    "electron": "react-scripts start & electron .",
+    "transpile": "babel node_modules/react-native-web-linear-gradient/src/index.js --out-file node_modules/react-native-web-linear-gradient/src/index.js"
   },
   "dependencies": {
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-native": "0.51.0",
+    "react-native-linear-gradient": "^2.4.0",
     "react-native-web": "0.2.2",
     "react-native-web-linear-gradient": "^1.0.2",
     "react-redux": "5.0.6",

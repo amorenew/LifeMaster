@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import ElevatedView from './../../components/ElevatedView'
 import Images from './../../constants/Images'
-import LinearGradient from './../../components/LinearGradient';
+import LinearGradient from 'react-native-linear-gradient';
 
 class index extends React.Component {
 
@@ -33,7 +33,7 @@ class index extends React.Component {
 
                     <TouchableOpacity
                         style={{
-                        width: 180,
+                        width: 250,
                         height: 130,
                         padding: 10,
                         justifyContent: 'center',

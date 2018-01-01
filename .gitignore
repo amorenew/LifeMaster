@@ -33,6 +33,7 @@ build/
 # node.js
 #
 node_modules/
+!node_modules/react-native-web-linear-gradient/src/index.js
 npm-debug.log
 yarn-error.log
 
