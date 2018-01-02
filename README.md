@@ -3,7 +3,7 @@ Run the project on a specific platform:
 Template from :https://github.com/react-everywhere/re-start/tree/react-16
 
 ### Tips on installation
-After you install npm stuff you should run yarn transpile because of the following bug
+After you install npm stuff you should run **yarn transpile** because of the following bug
 https://stackoverflow.com/questions/48034538/how-to-solve-this-error-you-may-need-an-appropriate-loader-to-handle-this-file-t
 #### Android
 react-native run-android
