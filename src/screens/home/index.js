@@ -5,31 +5,45 @@ import {
     Button,
     Text,
     TouchableOpacity,
+    TouchableHighlight,
     ImageBackground,
-    Image
+    Image,
+    ScrollView,
+    // Animated
 } from 'react-native';
 import ElevatedView from './../../components/ElevatedView'
 import Images from './../../constants/Images'
 import LinearGradient from 'react-native-linear-gradient';
-
+// import Panel from './../../components/Panel'; import Accordion from
+// 'react-native-collapsible/Accordion'; import Collapsible from
+// 'react-native-collapsible'; import Collapsible from './Collapsible';
+import Animated from 'animated'
 class index extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            h: new Animated.Value(0)
+        }
+    }
+    _onPress = () => {
+        // Animate the update
+        // LayoutAnimation.spring();
+        // this.setState({
+        //     h: 300
+        // })
+        this
+            .state
+            .h
+            .setValue(400);
+
+    }
     render() {
         return (
             <View style={styles.container}>
-
-                <ElevatedView elevation={8} style={styles.stayElevated}/>
-
-                {/* <View
-                    style={{
-                    shadowOpacity: 0.75,
-                    shadowRadius: 5,
-                    shadowColor: 'blue',
-                    shadowOffset: {
-                        height: 0,
-                        width: 0
-                    }
-                }}> */}
+                <ScrollView>
+                    <ElevatedView elevation={8} style={styles.stayElevated}/>
 
                     <TouchableOpacity
                         style={{
@@ -37,7 +51,53 @@ class index extends React.Component {
                         height: 130,
                         padding: 10,
                         justifyContent: 'center',
-                        alignItems: 'center',
+                        backgroundColor: 'black',
+                        alignItems: 'center'
+                    }}
+                        onPress={() => this._onPress}></TouchableOpacity>
+                    <View
+                        style={{
+                        width: '100%',
+                        height: this.state.h,
+                        // maxHeight: 550
+                    }}>
+                        <LinearGradient
+                            colors={['#5E98D9', '#558ED2', '#487EC7']}
+                            style={{
+                            width: '100%',
+                            height: '100%',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            paddingLeft: 15,
+                            paddingRight: 15,
+                            borderRadius: 10,
+                            zIndex: 1
+                        }}>
+                            <ImageBackground
+                                source={Images.learning}
+                                resizeMode={Image.resizeMode.contain}
+                                style={{
+                                width: '100%',
+                                height: '100%',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Text
+                                    style={{
+                                    color: 'white',
+                                    zIndex: 0,
+                                    fontSize: 38
+                                }}>Learning</Text>
+                            </ImageBackground>
+                        </LinearGradient>
+                    </View>
+                    <TouchableOpacity
+                        style={{
+                        width: 250,
+                        height: 130,
+                        padding: 10,
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}
                         onPress={() => alert("sfd")}>
                         <LinearGradient
@@ -69,44 +129,43 @@ class index extends React.Component {
                             </ImageBackground>
                         </LinearGradient>
                     </TouchableOpacity>
-                {/* </View> */}
-                <TouchableOpacity>
-                    <LinearGradient
-                        colors={['#4c669f', '#3b5998', '#192f6a']}
-                        style={styles.linearGradient}>
-                        <Text style={styles.buttonText}>Sign in with Facebook</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
-                <View
-                    style={{
-                    height: 100,
-                    width: 100,
-                    shadowOpacity: 0.75,
-                    shadowRadius: 5,
-                    shadowColor: 'blue',
-                    shadowOffset: {
-                        height: 0,
-                        width: 0
-                    }
-                }}>
+                    <TouchableOpacity>
+                        <LinearGradient
+                            colors={['#4c669f', '#3b5998', '#192f6a']}
+                            style={styles.linearGradient}>
+                            <Text style={styles.buttonText}>Sign in with Facebook</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
                     <View
                         style={{
                         height: 100,
                         width: 100,
                         shadowOpacity: 0.75,
                         shadowRadius: 5,
-                        shadowColor: 'green',
+                        shadowColor: 'blue',
                         shadowOffset: {
-                            height: -5,
-                            width: -5
+                            height: 0,
+                            width: 0
                         }
-                    }}/>
-                </View>
+                    }}>
+                        <View
+                            style={{
+                            height: 100,
+                            width: 100,
+                            shadowOpacity: 0.75,
+                            shadowRadius: 5,
+                            shadowColor: 'green',
+                            shadowOffset: {
+                                height: -5,
+                                width: -5
+                            }
+                        }}/>
+                    </View>
+                </ScrollView>
             </View>
         );
     }
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -133,6 +192,5 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         backgroundColor: 'transparent'
     }
-})
-
+});
 export default index;
