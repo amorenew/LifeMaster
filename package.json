@@ -1,5 +1,5 @@
 {
-  "name": "LifeMaster",
+  "name": "lifemaster",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,6 +14,11 @@
     "transpile2": "babel src/components/Panel.js --out-file src/components/Panel.js",
     "transpile3": "babel node_modules/react-native-collapsible/Accordion.js --out-file node_modules/react-native-collapsible/Accordion.js",
     "transpile4": "babel node_modules/react-native-collapsible/Collapsible.js --out-file node_modules/react-native-collapsible/Collapsible.js"
+  },
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts"
+    ]
   },
   "dependencies": {
     "animated": "^0.2.1",
